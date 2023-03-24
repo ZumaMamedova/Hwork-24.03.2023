@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="http://api.aladhan.com/v1/calendar/2017/4?latitude=51.508515&longitude=-0.1254872&method=2">
+    
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <input type="text" id="city">
+
+        <select name="time" id="time">
+            select <option value="day"></option>
+            select <option value="month"></option>
+        </select>
+
+
+        <button type="submit">Search</button>
+   
+      </form>
+      <div id="result">
+        <ul>
+            <li>Fajr:</li>
+            <li>Sunrise:</li>
+            <li>Dhuhr:</li>
+            <li>Asr:</li>
+            <li>Sunset:</li>
+            <li>Maghrib:</li>
+            <li>Isha:</li>
+            <li>Imsak:</li>
+            <li>Midnight:</li>
+        </ul>
+        
+      </div>
+</body>
+<script src="./script.js"></script>
+</html>
