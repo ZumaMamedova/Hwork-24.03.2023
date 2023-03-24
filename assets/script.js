@@ -13,10 +13,16 @@ $(document).ready(function){
             time=time==day?data.current.time_d:data.current.time_m;
             let html=`
             <ul>
-            <li>City:${data.location.name}</li>
-            <li>Country:${data.location.country}</li>
-            <li>Weather:${degree}</li>
-            <li>Icon:</li>
+            <li>Fajr:${data.location.time}</li>
+            <li>Sunrise:${data.location}</li>
+            <li>:${time}</li>
+            <li>Dhuhr:${time}</li>
+            <li>Asr:${time}</li>
+            <li>Sunset:${time}</li>
+            <li>Maghrib:${time}</li>
+            <li>Isha:${time}</li>
+            <li>Imsak:<${time}/li>
+            <li>Midnight:${time}</li>
             </ul>
 
 
