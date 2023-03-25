@@ -1,44 +1,65 @@
 $(document).ready(function(){
 
 
-    // $("#datepicker").datepicker({
-    //     dateFormat: "yy-mm-dd"
-    // });
-
     $("#submit4").click(function(e) {
         e.preventDefault();
-        console.log('sdfgh');
         // Get input values
         // let city = $("#city").val();
         // let date = $("#datepicker").val();
         // let time = $("#time").val();
-        let year = $("#year").val();
-        let month = $("#month").val();
+        
+        //let city=$("#city").val();
+        let dateInput=$("#dateInput").val();
+        console.log(dateInput.split("-"));
+
+        let arr=dateInput.split("-");
+
+        let year=arr[0];
+        let month=arr[1];
+        let day=arr[2];
+
+        console.log(year,month,day);
+
         
         
-        let url2 = `http://api.aladhan.com/v1/calendar/2017/4?latitude=51.508515&longitude=-0.1254872&method=2`
+        let url2 = `http://api.aladhan.com/v1/calendar/${year}/${month}?latitude=51.508515&longitude=-0.1254872&method=2`;
     
         
         $.ajax({
             url: url2,
             method: "get",
-            success: function(data) {
-                console.log(data);
-                data.data.forEach(e => {
-                    console.log(e.timings);
+            success: function(apiData) {
+                console.log(apiData);
+                console.log(apiData.data);
+                apiData.data.forEach(e){
+                    let table = $("#table")
 
-                    let ul = $("#ul")
+            let tr = `
+            <tr>
+                <td>Fajr: ${e.timings.Fajr}</td>
+                <td>Sunrise:${e.timings.Sunrise}</td>
+                <td>Dhuhr:${e.timings.Dhuhr}</td>
+                <td>Asr:${e.timings.Asr}</td>
+                <td>Sunset:${e.timings.Sunset}</td>
+                <td>Maghrib:${e.timings.Magrib}</td>
+                <td>Isha:${e.timings.Isha}</td>
+                <td>Imsak:${e.timings.Imsak}</td>
+                <td>Midnight:${e.timings.Midnight}</td>
+                <td>Firstthird:${e.timings.Midnight}</td>
+                <td>Lastthird:${e.timings.Midnight}</td>   
+              </tr>
 
-            let html = `
+              
+            `
+            $("#result").tr;
+            $("#dataInput").val();
 
-                <li>Fajr: ${e.timings.Fajr}</li>
-                
-            `;
-            ul.text(html)
-        });
-               
+
+                }        
+            
             }
-        })
+        });
+                   
     })
                   
 })
@@ -47,42 +68,6 @@ $(document).ready(function(){
 
 
 
-// $(document).ready(function() {
-
-//     $("button").click(function(e) {
-//         e.preventDefault();
-//         let city = $("#city").val();
-//         let time = $("#time").val();
-//         let url = `http://api.aladhan.com/v1/calendar/2017/4?latitude=51.508515&longitude=-0.1254872&method=2`;
-
-//         $.ajax({
-//             url: url,
-//             method: "get",
-//             success: function(data) {
-//                 time = $("#time").val() === "day" ? data.data[0].timings : data.data[31].timings;
-//                 let html = `
-//                     <ul>
-//                         <li>Fajr: ${time.Fajr}</li>
-//                         <li>Sunrise: ${time.Sunrise}</li>
-//                         <li>Dhuhr: ${time.Dhuhr}</li>
-//                         <li>Asr: ${time.Asr}</li>
-//                         <li>Sunset: ${time.Sunset}</li>
-//                         <li>Maghrib: ${time.Maghrib}</li>
-//                         <li>Isha: ${time.Isha}</li>
-//                         <li>Imsak: ${time.Imsak}</li>
-//                         <li>Midnight: ${time.Midnight}</li>
-//                     </ul>`;
-//                 $("#result").html(html);
-//                 $("#city").val("");
-//             },
-//             error: function(error) {
-//                 if (error.status == 400) {
-//                     console.log("Error 400");
-//                 }
-//             }
-//         });
-//     });
-// });
 
 
 
