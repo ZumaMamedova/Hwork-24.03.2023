@@ -17,31 +17,30 @@
         <input type="text" id="city">
 
         <label for="datepicker">Select a date:</label>
-        <input type="text" id="datepicker">
+        <input type="number" id="month">
+        <input type="number" id="year">
 
 
-        <select name="time" id="time">
+        <!-- <select name="time" id="time">
             select <option value="day">day</option>
             select <option value="month">month</option>
-        </select>
+        </select> -->
 
 
-        <button type="submit">Search</button>
+        <button id="submit4" type="submit">Search</button>
    
       </form>
       <div id="result">
-        <ul>
-            <li>Fajr: <span id="fajr"></span></li>
-            <li>Sunrise: <span id="sunrise"></span></li>
-            <li>Dhuhr: <span id="dhuhr"></span></li>
-            <li>Asr: <span id="asr"></span></li>
-            <li>Sunset: <span id="sunset"></span></li>
-            <li>Maghrib: <span id="maghrib"></span></li>
-            <li>Isha: <span id="isha"></span></li>
-            <li>Imsak: <span id="imsak"></span></li>
-            <li>Midnight: <span id="midnight"></span></li>
-            <li>Tahajjud: <span id="tahajjud"></span></li>
-            <li>Qiyamul-layl: <span id="qiyam"></span></li>
+        <ul itemid="ul" style=" justify-content: space-around;">
+            <li>Fajr: ${time.Fajr}</li>
+//                         <li>Sunrise:</li>
+//                         <li>Dhuhr:</li>
+//                         <li>Asr:</li>
+//                         <li>Sunset:</li>
+//                         <li>Maghrib:</li>
+//                         <li>Isha:</li>
+//                         <li>Imsak:</li>
+//                         <li>Midnight:</li>
           </ul>
           
         
@@ -49,5 +48,6 @@
 
       
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./script.js"></script>
 </html>

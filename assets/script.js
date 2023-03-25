@@ -1,39 +1,47 @@
-$(document).ready(function() {
-    $("#datepicker").datepicker({
-        dateFormat: "yy-mm-dd"
-    });
+$(document).ready(function(){
 
-        $("#submit-btn").click(function(e) {
-            e.preventDefault();
-            
-            // Get input values
-            let city = $("#city").val();
-            let date = $("#datepicker").val();
-            let time = $("#time").val();
-            
-            
-            
-            let url = `http://api.aladhan.com/v1/calendarByCity?city=${city}&country=US&method=2&month=${date.slice(5,7)}&year=${date.slice(0,4)}`;
-            
-            $.ajax({
-                url: url,
-                method: "get",
-                success: function(data) {
-                    let timings = time === "day" ? data.data[0].timings : data.data[0].timings;
-                    
-                    
-                    $("#fajr").text(timings.Fajr);
-                    $("#sunrise").text(timings.Sunrise);
-                    $("#dhuhr").text(timings.Dhuhr);
-                    $("#asr").text(timings.Asr);
-                    $("#sunset").text(timings.Sunset);
-                    $("#maghrib").text(timings.Maghrib);
-                    $("#isha").text(timings.Isha);
-                    $("#imsak").text(timings.Imsak);
-                    $("#midnight").text(timings.Midnight);
-                    
+
+    // $("#datepicker").datepicker({
+    //     dateFormat: "yy-mm-dd"
+    // });
+
+    $("#submit4").click(function(e) {
+        e.preventDefault();
+        console.log('sdfgh');
+        // Get input values
+        // let city = $("#city").val();
+        // let date = $("#datepicker").val();
+        // let time = $("#time").val();
+        let year = $("#year").val();
+        let month = $("#month").val();
+        
+        
+        let url2 = `http://api.aladhan.com/v1/calendar/2017/4?latitude=51.508515&longitude=-0.1254872&method=2`
+    
+        
+        $.ajax({
+            url: url2,
+            method: "get",
+            success: function(data) {
+                console.log(data);
+                data.data.forEach(e => {
+                    console.log(e.timings);
+
+                    let ul = $("#ul")
+
+            let html = `
+
+                <li>Fajr: ${e.timings.Fajr}</li>
+                
+            `;
+            ul.text(html)
+        });
+               
+            }
+        })
+    })
                   
-}
+})
 
 
 
