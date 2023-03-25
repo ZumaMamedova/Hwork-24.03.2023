@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="http://api.aladhan.com/v1/calendar/2017/4?latitude=51.508515&longitude=-0.1254872&method=2">
     
-    <title>Document</title>
+    <title>Prayer Times</title>
+
 </head>
 <body>
+
+   
     
     <form>
         <input type="text" id="city">
 
+        <label for="datepicker">Select a date:</label>
+        <input type="text" id="datepicker">
+
+
         <select name="time" id="time">
-            select <option value="day"></option>
-            select <option value="month"></option>
+            select <option value="day">day</option>
+            select <option value="month">month</option>
         </select>
 
 
@@ -25,18 +31,23 @@
       </form>
       <div id="result">
         <ul>
-            <li>Fajr:</li>
-            <li>Sunrise:</li>
-            <li>Dhuhr:</li>
-            <li>Asr:</li>
-            <li>Sunset:</li>
-            <li>Maghrib:</li>
-            <li>Isha:</li>
-            <li>Imsak:</li>
-            <li>Midnight:</li>
-        </ul>
+            <li>Fajr: <span id="fajr"></span></li>
+            <li>Sunrise: <span id="sunrise"></span></li>
+            <li>Dhuhr: <span id="dhuhr"></span></li>
+            <li>Asr: <span id="asr"></span></li>
+            <li>Sunset: <span id="sunset"></span></li>
+            <li>Maghrib: <span id="maghrib"></span></li>
+            <li>Isha: <span id="isha"></span></li>
+            <li>Imsak: <span id="imsak"></span></li>
+            <li>Midnight: <span id="midnight"></span></li>
+            <li>Tahajjud: <span id="tahajjud"></span></li>
+            <li>Qiyamul-layl: <span id="qiyam"></span></li>
+          </ul>
+          
         
       </div>
+
+      
 </body>
 <script src="./script.js"></script>
 </html>

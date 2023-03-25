@@ -8,6 +8,12 @@ body{
     height: 100vh;
     width: 100%;
     background-image: url(./img/ramadan-festive-celebrations-ramazan-holy-prayers-generative-ai_174954-1460.avif);
+    background-size: cover;
+}
+
+img{
+    height: 100vh;
+    width: 100%;
 }
 
 form{
@@ -30,7 +36,7 @@ color: wheat;
 }
 
 #time{
-    font-size: 25px;
+    font-size: 15px;
     width: 70px;
     border-radius: 10px;
 }
