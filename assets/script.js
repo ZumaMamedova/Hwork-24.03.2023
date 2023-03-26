@@ -31,31 +31,28 @@ $(document).ready(function(){
             success: function(apiData) {
                 console.log(apiData);
                 console.log(apiData.data);
-                apiData.data.forEach(e){
+                apiData.data.forEach(e => {
                     let table = $("#table")
 
             let tr = `
             <tr>
+                <td>${e.date.gregorian.day}</td>
                 <td>Fajr: ${e.timings.Fajr}</td>
                 <td>Sunrise:${e.timings.Sunrise}</td>
                 <td>Dhuhr:${e.timings.Dhuhr}</td>
                 <td>Asr:${e.timings.Asr}</td>
                 <td>Sunset:${e.timings.Sunset}</td>
-                <td>Maghrib:${e.timings.Magrib}</td>
+                <td>Maghrib:${e.timings.Maghrib}</td>
                 <td>Isha:${e.timings.Isha}</td>
                 <td>Imsak:${e.timings.Imsak}</td>
                 <td>Midnight:${e.timings.Midnight}</td>
-                <td>Firstthird:${e.timings.Midnight}</td>
-                <td>Lastthird:${e.timings.Midnight}</td>   
+                <td>Firstthird:${e.timings.Firstthird}</td>
+                <td>Lastthird:${e.timings.Lastthird}</td>   
               </tr>
-
-              
             `
-            $("#result").tr;
-            $("#dataInput").val();
+            $("#table").append(tr);
 
-
-                }        
+                })        
             
             }
         });
